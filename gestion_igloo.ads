@@ -2,13 +2,13 @@ with outils, gestion_locataire;
   use outils, gestion_locataire;
 
 package gestion_igloo is
-   Id : integer;
-   IDpareil : boolean;
-   Capa : int6;
-   position : Integer;
+
+
+
+
 
   Type Igloo is record
-      IdIgloo : integer;
+      IdIgloo : integer := -1;
       Capa_Igloo : integer;
       Nb_loc : integer;
       Loc : T_locataire;
@@ -19,6 +19,6 @@ package gestion_igloo is
 
    procedure construction(Ri : out T_registre_igloo);
    procedure visualisation(Ri : in T_registre_igloo);
-   Procedure reservation (Ri : in out T_registre_igloo; Rl : in out T_locataire);
-   procedure verif (Ri : in T_registre_igloo; verif : out Boolean);
+   Procedure reservation (Ri : in out T_registre_igloo; Rl : in out T_locataire); --finir
+   procedure verif (Ri : in T_registre_igloo; verif : out Boolean); -- finir
    end gestion_igloo;

@@ -14,13 +14,19 @@ begin
    put_line("gérer stock cadeaux");
 
    put_line("saisissez votre choix!");
--- visualisation_act(A);
-  -- construction(I);
- --  visualisation(I);
-  saisie_kdo(T);
+   visualisation_act(A); -- good
 
-   affichage_kdo(T);
-   reappro_KDO(T);
+   construction(I); -- good
+
+   visualisation(I); -- good
+
+   saisie_kdo(T); -- good
+
+   affichage_kdo(T); -- good
+
+   reappro_KDO(T); -- terminer, jsp comment faire
+
+
 
 
 end Main;

@@ -1,7 +1,7 @@
 package outils is
 subtype T_mot is string(1..20);
 Type T_jour is (lundi, mardi, mercredi, jeudi, vendredi);
-   NbI : integer := 0;
+   NbI : integer := 1676; --nombre igloo?
    NbE : integer;
 
    subtype Int6 is integer range 1..6;

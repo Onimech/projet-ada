@@ -5,11 +5,16 @@ package body gestion_igloo is
 
 
    procedure construction (Ri : out T_registre_igloo ) is
+      Id : Integer;
+      IDpareil : boolean;
+      Capa : int6;
+      position : Integer;
+
    begin
       loop
          put("quel est l'Id de l'igloo construit ?"); saisie_secur_entier(Id);
          IDpareil := false;
-         position := 0;
+         position := 1;
       for i in Ri'range loop
             if Ri(I).IdIgloo = Id then IDpareil := True; exit;
         end if;
@@ -21,9 +26,13 @@ package body gestion_igloo is
          end if;
 
       end loop;
-      NbI := NbI + 1;
-
-      Ri(Nbi).IdIgloo := ID;
+      for i in Ri'range loop
+         if Ri(i).IdIgloo >= 0 then position := i;
+         end if;
+           end loop;
+      -- manque la valeur de position
+      put(position);
+      Ri(position).IdIgloo := ID;
 
       -- gestion_igloo.adb:27 index check failed . pourquoi cette erreur ?
       loop
@@ -33,7 +42,7 @@ package body gestion_igloo is
          end if;
       end loop;
 
-      Ri(NbI).Capa_Igloo := Capa;
+      Ri(position).Capa_Igloo := Capa;
      -- gestion_igloo.adb:36 index check failed pourquoi erreur aussi ?"
 
    -- (?intialiser nb de locataire et liste avec des valeurs sentinelles ?
@@ -44,9 +53,15 @@ package body gestion_igloo is
 
   procedure visualisation (Ri : in t_registre_igloo) is
    begin
-    for i of Ri loop
-   -- put("Id de l'igloo : "); put(Ri(i).IdIgloo); new_line;
-        --  put("capacité"); put(Ri(i).Capa_Igloo); new_line;*
+
+
+      for i in Ri'range loop
+         if Ri(i).IdIgloo > 0 then
+            put("Igloo n°"); put(i); new_line;
+         put("Id de l'igloo : "); put(Ri(i).IdIgloo); new_line;
+
+         put("capacité"); put(Ri(i).Capa_Igloo); new_line;
+         end if;
            -- aller voir prof pour ça
          -- afficher locataire peut_etre ?
 null;
