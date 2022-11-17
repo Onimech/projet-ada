@@ -12,9 +12,6 @@ package body Aleatoire is
 	Max := Maximum ;
 	IF Minimum <= Max THEN
 	    Min := Minimum ;
-	ELSE
-	    Min := Maximum ;
-	END IF ;
     end Initialise ;
 
    function RAN return FLOAT is
